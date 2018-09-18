@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="APPLICATION_PATTERN" value="%date{HH:mm:ss.SSS} [%-5level] [%thread] %logger{1} {%X} - %msg%n" />
+    <property name="SERVER_PATTERN" value="%date{HH:mm:ss.SSS} [%-5level] [%thread] %logger{1} - %msg%n" />
+    <appender name="APPLICATION_CONSOLE_APPENDER" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>${APPLICATION_PATTERN}</Pattern>
+        </layout>
+    </appender>
+    <logger name="api" level="DEBUG" additivity="false">
+        <appender-ref ref="APPLICATION_CONSOLE_APPENDER" />
+    </logger>
+</configuration>
